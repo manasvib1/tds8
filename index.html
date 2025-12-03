@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quarterly Earnings — Interactive Reveal.js</title>
+
+  <!-- Reveal.js core CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/theme/solarized.css" id="theme">
+
+  <!-- Highlight.js for code syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+
+  <style>
+    /* Small customisations */
+    .logo { font-weight:700; font-size:0.9rem; }
+    pre code { font-size: 0.9rem; }
+    .email { font-size:0.9rem; opacity:0.85 }
+  </style>
+</head>
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide -->
+      <section>
+        <h1>Quarterly Earnings Report</h1>
+        <p class="logo">Modern Interactive Presentation • Q3</p>
+        <p class="email">Contact: 24f2003573@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Start by greeting stakeholders, state the purpose: summarize financial performance, highlight drivers and risks.
+        </aside>
+      </section>
+
+      <!-- Markdown slide: demonstrates using Markdown inside a slide -->
+      <section data-markdown>
+        <script type="text/template">
+
+## Executive Summary (Markdown slide)
+
+- Revenue up **6.4%** quarter-over-quarter.
+- Net income margin improved from *8.1%* to *9.3%*.
+- Key drivers:
+  - Strong client retention
+  - Growth in trading volumes
+
+> For full details see the following slides.
+
+        </script>
+        <aside class="notes">
+          Read the three bullets slowly; emphasize recurring revenue and margin improvement. Use pointer on the growth figure.
+        </aside>
+      </section>
+
+      <!-- Slide with animated fragments -->
+      <section>
+        <h2>Highlights — Animated</h2>
+        <ul>
+          <li class="fragment">Revenue increased due to higher trading fees.</li>
+          <li class="fragment">Cost of operations reduced via automation initiatives.</li>
+          <li class="fragment">Client acquisition improved in APAC region.</li>
+        </ul>
+        <aside class="notes">
+          Use fragments to reveal each highlight one by one. Pause between items to field short questions.
+        </aside>
+      </section>
+
+      <!-- Slide with code sample and syntax highlighting -->
+      <section>
+        <h2>Example: Simple Revenue CAGR calculation (JavaScript)</h2>
+        <pre><code class="language-javascript">// Calculate CAGR between two values
+function cagr(beginValue, endValue, years) {
+  return Math.pow(endValue / beginValue, 1 / years) - 1;
+}
+
+console.log((cagr(950, 1200, 2) * 100).toFixed(2) + '%'); // outputs CAGR
+</code></pre>
+        <aside class="notes">
+          Explain the CAGR snippet: useful for converting quarter-to-quarter or year-over-year growth into annualized form.
+        </aside>
+      </section>
+
+      <!-- Slide with mathematical formulas using MathJax -->
+      <section>
+        <h2>Financial Formula Examples</h2>
+        <p>Present Value (single cash flow):</p>
+        <p>\( PV = \dfrac{CF}{(1 + r)^n} \)</p>
+
+        <p>Net Present Value (series):</p>
+        <p>\( NPV = \sum_{t=0}^{N} \dfrac{CF_t}{(1 + r)^t} \)</p>
+
+        <p>Weighted Average Cost of Capital (WACC):</p>
+        <p>\( WACC = \dfrac{E}{V} r_E + \dfrac{D}{V} r_D (1 - T_c) \)</p>
+
+        <aside class="notes">
+          Walk through the PV and NPV formula, explain discount rate choice for sensitivity analysis.
+        </aside>
+      </section>
+
+      <!-- Slide with chart placeholder and fragments for bullet points -->
+      <section>
+        <h2>Revenue Breakdown</h2>
+        <p class="fragment">By segment: Trading | Advisory | Technology Services</p>
+        <p class="fragment">APAC now contributes 28% of total revenue.</p>
+        <p class="fragment">Note: chart will be connected live in the final deployed version.</p>
+        <aside class="notes">
+          Mention that interactive charts (D3/Plotly) can be embedded in production. For this demo, we keep a placeholder.
+        </aside>
+      </section>
+
+      <!-- Technical / deployment slide: GitHub Pages instructions -->
+      <section>
+        <h2>Publish to GitHub Pages</h2>
+        <ol>
+          <li>Commit this file as <code>index.html</code> to a repository (e.g., <code>quarterly-presentation</code>).</li>
+          <li>In the repo settings, enable Pages and select the `main` (or `gh-pages`) branch and root folder.</li>
+          <li>After a few minutes the presentation will be available at <code>https://&lt;your-username&gt;.github.io/&lt;repo&gt;/</code>.</li>
+        </ol>
+        <p class="fragment">Optional: use GitHub Actions to deploy automatically to a `gh-pages` branch.</p>
+        <aside class="notes">
+          If asked for a direct URL, explain the repo name pattern and branch configuration. Offer to create the repo and push the file if required.
+        </aside>
+      </section>
+
+      <!-- Closing slide -->
+      <section>
+        <h2>Questions</h2>
+        <p>Contact: <span class="email">24f2003573@ds.study.iitm.ac.in</span></p>
+        <aside class="notes">
+          Open the floor for questions. If time permits, run through the sensitivity appendix.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js and plugins -->
+  <script src="https://unpkg.com/reveal.js@4.5.0/dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.5.0/plugin/math/math.js"></script>
+
+  <!-- Highlight.js core (for additional languages) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+  <script>
+    // Initialize Reveal
+    Reveal.initialize({
+      hash: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax2 ],
+      slideNumber: true,
+      transition: 'convex'
+    });
+
+    // Ensure highlight.js runs on load
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightElement(block);
+      });
+    });
+  </script>
+
+  <!-- MathJax configuration (used by Reveal's math plugin) -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_SVG"></script>
+
+</body>
+</html>
